@@ -1,0 +1,12 @@
+.github/workflows/check-and-lint.yaml
+CHANGELOG.md
+Cargo.toml
+Dockerfile
+LICENSE
+README.md
+docker-compose.yml
+k8s/deployment.yml
+k8s/namespace.yml
+k8s/service.yml
+src/main.rs
+terraform/README.md

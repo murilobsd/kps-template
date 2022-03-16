@@ -1,0 +1,7 @@
+{{ container_port }}
+{{ docker_image_uri }}
+{{ replicas }}
+{{ service_name }}
+{{ squad_name }}
+{{ version }}
+{{ year }}
