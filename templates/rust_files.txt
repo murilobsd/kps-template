@@ -1,4 +1,6 @@
+.dockerignore
 .github/workflows/check-and-lint.yaml
+.gitignore
 CHANGELOG.md
 Cargo.toml
 Dockerfile
@@ -8,5 +10,6 @@ docker-compose.yml
 k8s/deployment.yml
 k8s/namespace.yml
 k8s/service.yml
+rustfmt.toml
 src/main.rs
 terraform/README.md

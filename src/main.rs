@@ -1,6 +1,7 @@
+#![allow(dead_code)]
 use std::{
     error::Error,
-    fs::File,
+    fs::{create_dir_all, File},
     io::{prelude::*, BufReader},
     path::Path,
 };
@@ -49,6 +50,17 @@ impl<'a> Tpl<'a> {
     pub fn render(&self, name: &str, data: &serde_json::Value) {
         println!("{}", self.reg.render(name, data).unwrap());
     }
+
+    pub fn render_to_file(
+        &self,
+        name: &str,
+        data: &serde_json::Value,
+        out_path: &str,
+    ) {
+        println!("{} generated", out_path);
+        let mut output = File::create(out_path).unwrap();
+        self.reg.render_to_write(name, data, &mut output).unwrap();
+    }
 }
 
 handlebars_helper!(captialize: |s: str| {
@@ -76,10 +88,22 @@ fn main() -> Result<(), Box<dyn Error>> {
     });
 
     let rust_files = lines_from_file("./templates/rust_files.txt");
+    let out_folder = "./output";
+    create_dir_all(out_folder).unwrap();
 
     for name in &rust_files {
+        let output_path =
+            format!("{folder}/{path}", folder = out_folder, path = name);
+
+        let path = Path::new(&output_path);
+        let parent = path.parent().unwrap();
+        // TODO: check if exist
+        if !parent.exists() {
+            create_dir_all(parent).unwrap();
+        }
         reg.insert(name);
-        reg.render(name, &data);
+        // reg.render(name, &data);
+        reg.render_to_file(name, &data, &output_path);
     }
 
     Ok(())
