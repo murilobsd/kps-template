@@ -1,0 +1,66 @@
+_type: export
+__export_format: 4
+__export_date: 2022-03-17T17:04:04.147Z
+__export_source: insomnia.desktop.app:v2022.1.1
+resources:
+  - _id: req_a8746530bbbf47f1be01fd2db05e35e0
+    parentId: wrk_3d9e9c1a35fe401897dce2ee81437576
+    modified: 1647535414063
+    created: 1647535340821
+    url: http://127.0.0.1:8080/health
+    name: Health
+    description: "Health check"
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1647535340821
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_3d9e9c1a35fe401897dce2ee81437576
+    parentId: null
+    modified: 1647536580031
+    created: 1647535340805
+    name: {{ service_name }}
+    description: "# {{ captialize service_name }} service"
+    scope: design
+    _type: workspace
+  - _id: env_e0153e5d9dc22b38d69e03fc2a83f3a139de4725
+    parentId: wrk_3d9e9c1a35fe401897dce2ee81437576
+    modified: 1647535383078
+    created: 1647535340815
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1647535340815
+    _type: environment
+  - _id: jar_e0153e5d9dc22b38d69e03fc2a83f3a139de4725
+    parentId: wrk_3d9e9c1a35fe401897dce2ee81437576
+    modified: 1647535340818
+    created: 1647535340818
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_62cd4010d09743d2910767e0db388bcd
+    parentId: wrk_3d9e9c1a35fe401897dce2ee81437576
+    modified: 1647536567305
+    created: 1647535340813
+    fileName: app-mbsd
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: uts_4b5263cf75404af1b06883c1f0f8d91b
+    parentId: wrk_3d9e9c1a35fe401897dce2ee81437576
+    modified: 1647535340822
+    created: 1647535340822
+    name: Example Test Suite
+    _type: unit_test_suite
